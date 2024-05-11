@@ -1,0 +1,22 @@
+{
+  "name": "FaceRecognitionIMG",
+  "version": "1.0.0",
+  "description": "Project to use AI online API ClariFai",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "keywords": [],
+  "author": "Bernardo  Bogado",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "knex": "^3.1.0",
+    "pg": "^8.11.5"
+  }
+}
