@@ -15,6 +15,7 @@ const db = knex({
     client: 'pg',
     connection: {
         host: process.env.DB_URL,
+        port: 5432,
         ssl:true
     },
 });
@@ -29,7 +30,7 @@ db.raw('SELECT 1')
     console.error('Error connecting to the database:', error);
   });
 
-  
+
 //TODO: Remove in production
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
