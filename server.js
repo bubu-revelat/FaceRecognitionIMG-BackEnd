@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
@@ -9,14 +10,12 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
 
+
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        port: 5432,
-        user: 'postgres',
-        password: 'bubu1234',
-        database: 'postgres',
+        host: process.env.DB_URL,
+        ssl:true
     },
 });
 
@@ -40,6 +39,6 @@ app.put("/image", (req,res) => {image.handleImage(req,res,db)});
 app.post("/imageurl", (req,res) => {image.handleClarifiAPI(req,res)});
 
 
-app.listen(3000, () => {
-    console.log("server is running port 3000")
+app.listen(process.env.port || 3000, () => {
+    console.log(`server is running port ${process.env.port}` );
 });

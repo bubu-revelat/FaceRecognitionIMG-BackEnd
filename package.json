@@ -4,7 +4,8 @@
   "description": "Project to use AI online API ClariFai",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "node server.js",
+    "start_dev": "nodemon"
   },
   "keywords": [],
   "author": "Bernardo  Bogado",
@@ -15,6 +16,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "knex": "^3.1.0",
     "pg": "^8.11.5"

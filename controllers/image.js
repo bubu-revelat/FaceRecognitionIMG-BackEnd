@@ -1,8 +1,7 @@
 const handleClarifiAPI = (req, res) =>{
-    console.log("Inside clarifi method: ", req.body.input);
-    const PAT = 'e92018ee4c6e4d6cab68b92d19e801e6';
-    const USER_ID = '1o4l1ko26wtm';
-    const APP_ID = 'FaceRecognitionIMG';
+    const PAT = process.env.CLARIFAI_PAT;
+    const USER_ID = process.env.CLARIFAI_USER_ID;
+    const APP_ID = process.env.CLARIFAI_APP_ID;
     const IMAGE_URL = req.body.input;
 
     const raw = JSON.stringify({
