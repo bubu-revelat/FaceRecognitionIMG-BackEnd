@@ -19,6 +19,17 @@ const db = knex({
     },
 });
 
+
+// Listen for the connection event
+db.raw('SELECT 1')
+  .then(() => {
+    console.log('Database connection successful!');
+  })
+  .catch((error) => {
+    console.error('Error connecting to the database:', error);
+  });
+
+  
 //TODO: Remove in production
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
